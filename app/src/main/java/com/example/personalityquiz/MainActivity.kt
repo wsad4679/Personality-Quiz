@@ -29,9 +29,54 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+
+
+        val data="cos"
         
         val stopWatch : Chronometer = findViewById(R.id.quizTimeChronometer)
-        val counDownTimer : TextView = findViewById(R.id.countDownTimer)
+        val counDownTimerTextView : TextView = findViewById(R.id.countDownTimer)
+
+
+
+
+
+
+        fun endQuiz(data: String){
+            stopWatch.stop()
+            val intent = Intent(this, SummaryActivity::class.java)
+            val data = "przyszłe dane"
+            intent.putExtra("QUIZ_DATA", data)
+            startActivity(intent)
+        }
+
+
+
+        val counDownTimer : CountDownTimer = object : CountDownTimer(10*60*1000, 1){
+            override fun onTick(millisUntilFinished: Long) {
+                val secondsLeft = millisUntilFinished/1000
+                counDownTimerTextView.text = "pozostało $secondsLeft sekund"
+
+            }
+
+            override fun onFinish() {
+                endQuiz(data)
+            }
+        }
+        counDownTimer.start()
+        stopWatch.start()
+
+
+
+
+
+
+
+
+
+
+
 
         val firstQuestion : CheckBox = findViewById(R.id.firstQuestionCheckBox)
         val secondQuestion : CheckBox = findViewById(R.id.secondQuestionCheckBox)
@@ -51,14 +96,14 @@ class MainActivity : AppCompatActivity() {
         thirdQuestion.setOnCheckedChangeListener { _, isChecked ->
             thirdAnswer = if (isChecked)  1 else 0
         }
-        
-        
-        
 
 
 
 
-        
+
+
+
+
         val genderRadioGroup : RadioGroup = findViewById(R.id.genderRadioGroup)
         
         genderRadioGroup.setOnCheckedChangeListener { _, checkedId ->
@@ -97,10 +142,7 @@ class MainActivity : AppCompatActivity() {
         val finishButton : Button = findViewById(R.id.finishTestButton)
 
         finishButton.setOnClickListener {
-            val intent = Intent(this, SummaryActivity::class.java)
-            val data = "przyszłe dane"
-            intent.putExtra("QUIZ_DATA", data)
-            startActivity(intent)
+            endQuiz(data)
         }
 
 
