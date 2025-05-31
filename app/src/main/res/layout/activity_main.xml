@@ -93,21 +93,24 @@
                 </RadioGroup>
 
             <CheckBox
+                android:id="@+id/firstQuestionCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Czy jesteś jakiś 1"
                 />
 
             <CheckBox
+                android:id="@+id/secondQuestionCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Czy jesteś jakiś 1"
                 />
 
             <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Czy jesteś jakiś 1"
+                android:id="@+id/thirdQuestionCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Czy jesteś jakiś 1"
             />
 
 

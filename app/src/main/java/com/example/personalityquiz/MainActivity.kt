@@ -2,11 +2,17 @@ package com.example.personalityquiz
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.CheckBox
+import android.widget.Chronometer
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,8 +29,42 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        
+        val stopWatch : Chronometer = findViewById(R.id.quizTimeChronometer)
+        val counDownTimer : TextView = findViewById(R.id.countDownTimer)
+
+        val firstQuestion : CheckBox = findViewById(R.id.firstQuestionCheckBox)
+        val secondQuestion : CheckBox = findViewById(R.id.secondQuestionCheckBox)
+        val thirdQuestion : CheckBox = findViewById(R.id.thirdQuestionCheckBox)
 
 
+        var firstAnswer = 0
+        var secondAnswer = 0
+        var thirdAnswer = 0
+
+        firstQuestion.setOnCheckedChangeListener { _, isChecked ->
+            firstAnswer = if (isChecked)  1 else 0
+        }
+        secondQuestion.setOnCheckedChangeListener { _, isChecked ->
+            secondAnswer = if (isChecked)  1 else 0
+        }
+        thirdQuestion.setOnCheckedChangeListener { _, isChecked ->
+            thirdAnswer = if (isChecked)  1 else 0
+        }
+        
+        
+        
+
+
+
+
+        
+        val genderRadioGroup : RadioGroup = findViewById(R.id.genderRadioGroup)
+        
+        genderRadioGroup.setOnCheckedChangeListener { _, checkedId ->
+            val genderRadioButton : RadioButton = findViewById(checkedId)
+            val gender = "${genderRadioButton.text}"
+        }
 
 
         val spinner : Spinner = findViewById(R.id.favouriteColorSpinner)
