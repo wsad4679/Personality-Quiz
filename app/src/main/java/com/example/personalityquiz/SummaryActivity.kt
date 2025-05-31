@@ -1,6 +1,7 @@
 package com.example.personalityquiz
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +17,10 @@ class SummaryActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val quizData = intent.getStringExtra("QUIZ_DATA")
+        val personality : TextView = findViewById(R.id.personalityTextView)
+
+        personality.text = quizData
     }
 }
