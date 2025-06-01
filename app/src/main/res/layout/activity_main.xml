@@ -63,7 +63,9 @@
             android:orientation="vertical"
             >
 
-                <RadioGroup
+
+
+            <RadioGroup
                     android:id="@+id/genderRadioGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -79,6 +81,7 @@
                         android:layout_height="wrap_content"
                         android:text="Kobieta"
                         android:layout_margin="20dp"
+                        android:checked="true"
                         />
 
                     <RadioButton
@@ -96,21 +99,24 @@
                 android:id="@+id/firstQuestionCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Czy jesteś jakiś 1"
+                android:text="Czy jesteś indywidualistą / indywidualistką"
+                android:layout_margin="20dp"
                 />
 
             <CheckBox
                 android:id="@+id/secondQuestionCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Czy jesteś jakiś 1"
+                android:text="Czy zazwyczaj spędzasz czas samotnie"
+                android:layout_margin="20dp"
                 />
 
             <CheckBox
                 android:id="@+id/thirdQuestionCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Czy jesteś jakiś 1"
+                android:text="Czy lubisz spędzać czas w domu"
+                android:layout_margin="20dp"
             />
 
 
@@ -126,15 +132,24 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="jak coś oceniasz:           1"
+                    android:text="jak oceniasz\n ogromne imprezy: "
+                    android:layout_margin="10dp"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
                     />
 
                 <SeekBar
+                    android:id="@+id/firstSeekBar"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
+                    android:layout_margin="10dp"
                     android:max="5"
-                    android:progress="2" />
+                    android:progress="3" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -156,15 +171,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="jak coś oceniasz:           1"
+                    android:text="jak mocno lubisz\n zaciszne miejsca: "
+                    android:layout_margin="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
                     />
 
                 <SeekBar
+                    android:id="@+id/secondSeekBar"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:max="5"
-                    android:progress="2" />
+                    android:progress="3" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -174,40 +196,33 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                >
+                android:text="Twój ulubioy kolor: "
+                android:layout_margin="10dp"
+                />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="jak coś oceniasz:           1"
-                    />
-
-                <SeekBar
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:max="5"
-                    android:progress="2" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5"
-                    />
-
-            </LinearLayout>
 
             <Spinner
                 android:id="@+id/favouriteColorSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+
+                />
+
+        </LinearLayout>
+
+
 
 
             <Button
@@ -215,6 +230,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Zakończ test"
+                android:layout_gravity="center"
                 />
 
         </LinearLayout>

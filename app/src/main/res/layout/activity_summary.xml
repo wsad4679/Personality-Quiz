@@ -20,6 +20,14 @@
         />
 
     <TextView
+        android:id="@+id/dateOfQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data skończenia quizu: "
+        android:layout_margin="20dp"
+        />
+
+    <TextView
         android:id="@+id/personalityTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
