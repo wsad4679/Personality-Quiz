@@ -1,7 +1,9 @@
 package com.example.personalityquiz
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +32,7 @@ class SummaryActivity : AppCompatActivity() {
 
         dateTextView.text = "Data skończenia quizu: ${dateOfQuiz}  ${timeOfQuiz}"
 
+        val background : LinearLayout = findViewById(R.id.main)
 
 
         val quizDataPoints = intent.getIntExtra("QUIZ_DATA_POINTS", 0)
@@ -41,17 +44,21 @@ class SummaryActivity : AppCompatActivity() {
             if (quizDataPoints > 6) {
                 personality.text= "Jesteś ekstrawertyczką a twój ulubiony kolor to $quizDataColor"
                 personalityImage.setImageResource(R.drawable.ekstrawerty)
+                background.setBackgroundColor(Color.rgb(255, 175, 51))
             } else {
                 personality.text= "Jesteś introwertyczką a twój ulubiony kolor to $quizDataColor"
                 personalityImage.setImageResource(R.drawable.introwertyk)
+                background.setBackgroundColor(Color.rgb(46, 53, 112))
             }
         } else if (quizDataGender == "Mężczyzna") {
             if (quizDataPoints > 6) {
                 personality.text= "Jesteś ekstrawertykiem a twój ulubiony kolor to $quizDataColor"
                 personalityImage.setImageResource(R.drawable.ekstrawerty)
+                background.setBackgroundColor(Color.rgb(255, 175, 51))
             } else {
                 personality.text= "Jesteś introwertykiem a twój ulubiony kolor to $quizDataColor"
                 personalityImage.setImageResource(R.drawable.introwertyk)
+                background.setBackgroundColor(Color.rgb(46, 53, 112))
             }
         }
     }

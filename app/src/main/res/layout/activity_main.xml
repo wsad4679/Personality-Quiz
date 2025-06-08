@@ -1,241 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical"
-    >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Personality Quiz"
-        android:textSize="30sp"
-        android:layout_margin="20dp"
-        android:layout_gravity="center"
-        />
+    android:background="#C8B7FF">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        >
-
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="czas trwania quizu: "
-            android:textSize="15sp" />
+            android:text="Quiz Osobowości"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="#2E004F"
+        android:layout_marginBottom="20dp"/>
 
 
-        <Chronometer
-            android:id="@+id/quizTimeChronometer"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/countDownTimer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="pozostały czas: 10:00"
-            android:textSize="15sp" />
-
-
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+            android:background="#E9E1F5"
+        app:cardCornerRadius="20dp"
+        android:layout_marginBottom="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Czas trwania: "
+                android:textSize="16sp"
+                android:textColor="#2E004F"/>
+
+            <Chronometer
+                android:id="@+id/quizTimeChronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginEnd="20dp"
+                android:textColor="#2E004F"/>
+
+            <TextView
+                android:id="@+id/countDownTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pozostały czas: 10:00"
+                android:textSize="16sp"
+                android:textColor="#2E004F"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E9E1F5"
+        app:cardCornerRadius="20dp"
+        android:layout_marginBottom="20dp">
+
+        <RadioGroup
+            android:id="@+id/genderRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/womenRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kobieta"
+                android:checked="true"
+                android:textColor="#2E004F"/>
+
+            <RadioButton
+                android:id="@+id/menRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mężczyzna"
+                android:layout_marginStart="20dp"
+                android:textColor="#2E004F"/>
+        </RadioGroup>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E9E1F5"
+        app:cardCornerRadius="20dp"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            >
-
-
-
-            <RadioGroup
-                    android:id="@+id/genderRadioGroup"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_margin="10dp"
-                    android:layout_gravity="top"
-                    android:gravity="center"
-                    >
-
-                    <RadioButton
-                        android:id="@+id/womenRadioButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Kobieta"
-                        android:layout_margin="20dp"
-                        android:checked="true"
-                        />
-
-                    <RadioButton
-                        android:id="@+id/menRadioButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mężczyzna"
-                        android:layout_margin="20dp"
-                        />
-
-
-                </RadioGroup>
+            android:padding="15dp">
 
             <CheckBox
                 android:id="@+id/firstQuestionCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Czy jesteś indywidualistą / indywidualistką"
-                android:layout_margin="20dp"
-                />
+                android:textColor="#2E004F"/>
 
             <CheckBox
                 android:id="@+id/secondQuestionCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Czy zazwyczaj spędzasz czas samotnie"
-                android:layout_margin="20dp"
-                />
+                android:textColor="#2E004F"/>
 
             <CheckBox
                 android:id="@+id/thirdQuestionCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Czy lubisz spędzać czas w domu"
-                android:layout_margin="20dp"
-            />
+                android:textColor="#2E004F"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                >
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="jak oceniasz\n ogromne imprezy: "
-                    android:layout_margin="10dp"
-                    />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    />
-
-                <SeekBar
-                    android:id="@+id/firstSeekBar"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:max="5"
-                    android:progress="3" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                >
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="jak mocno lubisz\n zaciszne miejsca: "
-                    android:layout_margin="10dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    />
-
-                <SeekBar
-                    android:id="@+id/secondSeekBar"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:max="5"
-                    android:progress="3" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5"
-                    />
-
-            </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E9E1F5"
+        app:cardCornerRadius="20dp"
+        android:layout_marginBottom="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            >
+            android:orientation="vertical"
+            android:padding="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Twój ulubioy kolor: "
-                android:layout_margin="10dp"
-                />
+                android:text="Jak oceniasz ogromne imprezy:"
+                android:layout_marginBottom="5dp"
+                android:textColor="#2E004F"/>
+
+            <SeekBar
+                android:id="@+id/firstSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:progress="3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jak bardzo lubisz zaciszne miejsca:"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="#2E004F"/>
+
+            <SeekBar
+                android:id="@+id/secondSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:progress="3"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E9E1F5"
+        app:cardCornerRadius="20dp"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ulubiony kolor:"
+                android:layout_marginEnd="10dp"
+                android:textColor="#2E004F"/>
 
             <Spinner
                 android:id="@+id/favouriteColorSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                />
-
+                android:layout_height="wrap_content"/>
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
+        <Button
+        android:id="@+id/finishTestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zakończ test"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#6D3FB3"
+        android:textColor="#FFFFFF"
+        />
 
-
-
-            <Button
-                android:id="@+id/finishTestButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Zakończ test"
-                android:layout_gravity="center"
-                />
-
-        </LinearLayout>
+</LinearLayout>
 
 
     </ScrollView>
-
-    </LinearLayout>
